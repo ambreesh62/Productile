@@ -1,0 +1,6 @@
+__pycache__/
+*/__pycache__/*
+
+product_image/*
+*/product_image/*
+product_image/
