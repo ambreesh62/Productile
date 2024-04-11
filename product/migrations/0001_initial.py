@@ -8,36 +8,53 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Category',
+            name="Category",
             fields=[
-                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='created_at')),
-                ('updated_at', models.DateTimeField(auto_now=True, verbose_name='updated_at')),
-                ('id', models.AutoField(primary_key=True, serialize=False)),
-                ('name', models.CharField(max_length=50, verbose_name='Name')),
+                (
+                    "created_at",
+                    models.DateTimeField(auto_now_add=True, verbose_name="created_at"),
+                ),
+                (
+                    "updated_at",
+                    models.DateTimeField(auto_now=True, verbose_name="updated_at"),
+                ),
+                ("id", models.AutoField(primary_key=True, serialize=False)),
+                ("name", models.CharField(max_length=50, verbose_name="Name")),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
         ),
         migrations.CreateModel(
-            name='Product',
+            name="Product",
             fields=[
-                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='created_at')),
-                ('updated_at', models.DateTimeField(auto_now=True, verbose_name='updated_at')),
-                ('id', models.AutoField(primary_key=True, serialize=False)),
-                ('name', models.CharField(max_length=50, verbose_name='Name')),
-                ('description', models.TextField()),
-                ('price', models.DecimalField(decimal_places=2, max_digits=10)),
-                ('image', models.ImageField(upload_to='Product_image')),
-                ('category_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='product.category')),
+                (
+                    "created_at",
+                    models.DateTimeField(auto_now_add=True, verbose_name="created_at"),
+                ),
+                (
+                    "updated_at",
+                    models.DateTimeField(auto_now=True, verbose_name="updated_at"),
+                ),
+                ("id", models.AutoField(primary_key=True, serialize=False)),
+                ("name", models.CharField(max_length=50, verbose_name="Name")),
+                ("description", models.TextField()),
+                ("price", models.DecimalField(decimal_places=2, max_digits=10)),
+                ("image", models.ImageField(upload_to="Product_image")),
+                (
+                    "category_id",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="product.category",
+                    ),
+                ),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
         ),
     ]
